@@ -1,0 +1,383 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: ralewayRegular;
+    src: url(fonts/raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: ralewayBold;
+    src: url(fonts/raleway/Raleway-Bold.ttf)
+}
+
+@font-face {
+    font-family: drugs;
+    src: url(fonts/Drugs.otf)
+}
+
+@font-face {
+    font-family: DINCondensed;
+    src: url(fonts/DINCondensedBold.ttf);
+}
+
+
+html {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(220,220,215);
+}
+
+header {
+	background-color: #555555;
+	font-size: 1.2em;
+    font-family: ralewayRegular;
+    text-align: center;
+    padding: 15px;
+}
+
+.textbox {
+    height:30px;
+    font-size: large;
+    width: 100%;
+    font-family: ralewayRegular;
+}
+
+.dropdown {
+    height:30px;
+    font-size: large;
+    width: 100%;
+    border-radius: 0;
+}
+
+.datepicker {
+    height: 30px;
+    font-size: large;
+    width: 100%;
+}
+
+.range{
+    width: 30%;
+}
+
+
+textarea {
+    width: 100%;
+}
+nav {
+    text-align: justify;
+    color:rgb(220,220,215);
+}
+
+select, option{
+    width: 300px;
+}
+
+.favicon {
+    width: 10%;
+    min-width: 70px;
+}
+
+.parallax{
+    background-attachment: fixed; 
+    height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-image: url(images/background.jpg);
+}
+
+.message {
+height: 200px;
+vertical-align: top;
+}
+
+
+nav ul {
+	list-style-type: none;
+	margin: 0px;
+    padding: 0px;
+}
+
+nav li {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li a {
+    color:rgb(220,220,215);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+/*Minden menüelem felett legyen margin, kivéve a középső fölött*/
+nav li a:not(#title){
+    margin-top: 5%;
+}
+
+nav .active {
+color: white;
+font-family: ralewayRegular;
+}
+
+figure > img {
+    width: 80%;
+}
+
+label.error {
+    color: darkred;
+}
+
+figcaption {
+    padding: 10%;
+    padding-top: 2%;
+}
+
+figcaption > h2{
+margin-bottom: 10%;
+}
+.instructors{
+    padding: 5%;
+}
+
+.instructorcaption {
+    /*paraméterek sorrendje: top right bottom left*/
+    /*Csak a bal oldali padding legyen kisebb*/
+    padding:5% 5% 5% 1%;
+    text-align: left;
+}
+
+img {
+	max-width:100%;
+}
+
+img.favicon:hover{
+    transform: scale(1.1);
+}
+
+img.favicon{
+    transition: 0.3s;
+}
+
+article {
+    font-family: ralewayRegular;
+    color: #555555;
+    text-align: center;
+    padding: 5%;
+}
+
+article > h2{
+    margin-bottom: 2%;
+}
+
+div > h2{
+    margin: 10% 0 10% 0;
+}
+aside {
+    font-family: ralewayRegular;
+    color: #555555;
+    text-align: center;
+    padding: 5%;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+aside > h2{
+    margin-bottom: 10%;
+}
+article > h1{
+    margin: 1%;
+    text-align: center;
+    font-family: Drugs;
+    font-size: 3em;
+}
+
+
+
+article > h3 {
+    font-family: Drugs;
+}
+
+.contact {
+    text-align: left;
+}
+article > p{
+    margin: 2%;
+}
+
+.about{
+    padding: 4%;
+}
+
+table {
+    border: 1px solid #555555;
+    background: url("images/tablebackground.jpg");
+    background-size: 100%;
+    background-position: center;
+    border-collapse:collapse;
+    width: 100%;
+    /*Állandó oszlopszélesség*/
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid #555555;
+    color: white;
+    padding: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+footer {
+    background-color:rgba(65,65,65,0.6);
+    font-family: ralewayRegular;
+	margin-top: 2%;
+	font-size: 0.8em;
+    text-align:center;
+    padding: 2%;
+	color: rgb(200,200,200);
+}
+
+.galleria-container{
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.gallerytitle{
+    text-align: center;
+    font-family: ralewayRegular;
+}
+.fejléc {
+    font-family: Drugs;
+}
+
+td > p{
+    font-size: small;
+    font-family: ralewayRegular;
+}
+
+.price{
+    height:30px;
+    font-size: medium;
+    width: 50%;
+    font-family: ralewayRegular;
+}
+
+/*forrás: https://www.w3schools.com/howto/howto_js_accordion.asp */
+.accordion {
+
+  background-color: white;
+  margin-top: 10px;
+  color: #555555;
+  padding: 2%;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.activeAccordion, .accordion:hover {
+  background-color: lightgray;
+}
+
+/*forrás: https://www.w3schools.com/howto/howto_js_accordion.asp*/
+.panel {
+
+  padding: 0 10%;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+.tableButton:focus {
+    background-color: rgb(220,220,215);
+    color: #555555;
+}
+
+.book:hover{
+    color: white;
+}
+
+.tableButton{
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10%;
+    white-space: normal;
+    background-color: transparent;
+    font-family: ralewayRegular;
+    color: white;
+    font-size: 1.1em;
+}
+
+.button{
+    background-color: #555555;
+    font-family: Drugs;
+    color: rgb(220,220,215);
+    border-radius: 40px;
+    font-size: 1.3em;
+    padding: 1%;
+    margin: 1%;
+}
+[class*="col-"] { /*mobile first*/
+    float: left;
+    width: 100%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (min-width: 600px) {
+    /* tablet */
+    .col-t-1 {width: 8.33%;}
+    .col-t-2 {width: 16.66%;}
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* számítógép */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+#formdiv{
+    padding: 1%;
+}
+
+nav, ul{
+    list-style-type: none;
+}
+
+* {
+    box-sizing: border-box;
+}

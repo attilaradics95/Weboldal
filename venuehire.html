@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radics Attila">
+    <meta name="description" content="Planet B Yoga Studio">
+    <title>Planet B</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="kepek/favicon_inverted.png" rel="icon" type="image/x-icon">
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-validation-1/dist/jquery.validate.js"></script>
+    <script>
+        //valueNotEquals metódus forrása: https://stackoverflow.com/questions/4364291/jquery-validate-select-box
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg != value;
+        }, "Value must not equal arg.");
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    studio: { valueNotEquals: "-1" },
+                    date: { valueNotEquals: "" },
+                },
+                messages: {
+                    firstname: " Please provide your first name!",
+                    lastname: " Please provide your last name!",
+                    email: " Please provide a valid e-mail address!",
+                    studio: { valueNotEquals: "Please select an item!" },
+                    date: { valueNotEquals: " Please pick a date" }
+                },
+            });
+        });
+    </script>
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <header class="col-12 col-t-12">
+            <nav class="col-12 col-t-12">
+                <ul>
+                    <li class="col-2 col-t-12"><a href="about.html">ABOUT US</a></li>
+                    <li class="col-2 col-t-12"><a href="classes.html">CLASSES</a></li>
+                    <li class="col-4 col-t-12"><a href="index.html" id="title"><img src="images/favicon.png"
+                                class="favicon" alt="favorite icon"></a>
+                    </li>
+                    <li class="col-2 col-t-12"><a href="contact.html">CONTACT US</a></li>
+                    <li class="col-2 col-t-12"><a href="#" class="active">VENUE HIRE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-t-12">
+            <article>
+                <h1>Studio Hire</h1>
+                <p>Our Studios are available for hiring for rehearsals, private events etc per request. Please note that
+                    the availability of our studios is limited after 6 pm because of classes. We hereby kindly ask you
+                    to forward your hiring request to us at least one week in advance.</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-t-12">
+            <article>
+                <figure class="col-4 col-t-12">
+                    <img src="images/studio1.jpg">
+                    <figcaption>
+                        <h2>Studio 1</h2>
+                        <p>Cozy, well-lit studio. This is a great deal for small rehearsals (up to 6 participants). Real
+                            wood floor.</p>
+                    </figcaption>
+                </figure>
+                <figure class="col-4 col-t-12">
+                    <img src="images/studio2.jpg">
+                    <figcaption>
+                        <h2>Studio 2</h2>
+                        <p>This studio has space for up to 12 people making it suitable for mid-size yoga-sessions or
+                            rehearsals.</p>
+                    </figcaption>
+                </figure>
+                <figure class="col-4 col-t-12">
+                    <img src="images/studio3.jpg">
+                    <figcaption>
+                        <h2>Studio 3</h2>
+                        <p>Our largest studio, bluetooth stereo system, air conditioning.</p>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <form name="order" action="http://szamtud.uni-corvinus.hu/~blang/receive.php" id="myform" method="post"
+            onsubmit="return ellenoriz()">
+            <div class="col-6 col-t-12">
+                <article>
+                    <p><label for="firstname">First name </label> <br>
+                        <input class="textbox" type="text" id="firstname" name="firstname" size="50">
+                    </p>
+                    <p><label for="lastname">Last name </label> <br>
+                        <input class="textbox" type="text" id="lastname" name="lastname" size="50">
+                    </p>
+                    <p><label for="email">E-mail </label> <br>
+                        <input class="textbox" type="email" id="email" name="email" size="50">
+                    </p>
+                    <p><label for="studio">Studio: </label> <br>
+                        <select id="studio" name="studio" class="dropdown">
+                            <option value="-1">Please make a selection</option>
+                            <option value="1">Studio 1</option>
+                            <option value="2">Studio 2</option>
+                            <option value="3">Studio 3</option>
+                        </select>
+                    </p>
+
+                </article>
+            </div>
+            <div class="col-6 col-t-12">
+                <article>
+                    <p>
+                        <label for="date">Date: </label><br>
+                        <input type="date" id="date" name="date" class="datepicker">
+                    </p>
+                    <p>
+                        <label for="duration">How long would you like to hire it for?</label>
+                    <p>
+                        <input type="range" id="duration" name="duration" class="range" min="1" max="6" step="0.5"
+                            value="1" onchange="updateRange(this.value)">
+                        <input type="text" id="durationLabel" disabled value="1 hour" size="9">
+                    <p><label for="vip">I am a VIP member: </label>
+                        <input type="checkbox" id="vip" name="vip"></p>
+                    <p>
+                        Your approximated price is:
+                        <input type="text" value="unknown" id="price" class="price" disabled>
+                        <input type="button" class="button" value="Calculate" onclick="Calculate()">
+                    </p>
+                </article>
+            </div>
+            <div class="col-12 col-t-12">
+                <article>
+                    <input type="submit" class="button" value="Submit">
+                </article>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <div class="row">
+        <footer class="col-12 col-t-12">
+            Planet B Yoga Studio, De Quincy Mews 4 York house London E1061SU United Kingdom <br>
+            This website is for educational purposes only
+        </footer>
+    </div>
+</body>
+
+</html>

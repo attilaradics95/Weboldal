@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radics Attila">
+    <meta name="description" content="Planet B Yoga Studio">
+    <title>Planet B</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="kepek/favicon_inverted.png" rel="icon" type="image/x-icon">
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-validation-1/dist/jquery.validate.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    name: " Please provide your name!",
+                    email: " Please provide a valid e-mail address!",
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <script src="javascript.js"></script>
+    <div class="row">
+        <header class="col-12 col-t-12">
+            <nav class="col-12 col-t-12">
+                <ul>
+                    <li class="col-2 col-t-12"><a href="about.html">ABOUT US</a></li>
+                    <li class="col-2 col-t-12"><a href="classes.html">CLASSES</a></li>
+                    <li class="col-4 col-t-12"><a href="index.html" id="title" class="active">
+                            <img src="images/favicon_active.png" class="favicon" alt="favorite icon"></a>
+                    </li>
+                    <li class="col-2 col-t-12"><a href="contact.html">CONTACT US</a></li>
+                    <li class="col-2 col-t-12"><a href="venuehire.html">VENUE HIRE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="parallax">
+    </div>
+    <div class="row">
+        <article>
+            <h1>PLANET B YOGA STUDIO</h1>
+            <hr>
+        </article>
+        <div class="col-6 col-t-12">
+
+            <article>
+
+                <h2>Types of sessions we provide:</h2>
+                <button class="accordion">Hatha yoga</button>
+                <div class="panel">
+                    <p>The Sanskrit term "hatha" is an umbrella term for all physical postures of yoga. In the West,
+                        hatha yoga simply refers
+                        to all the other styles of yoga (ashtanga, Iyengar, etc.) that are grounded in a physical
+                        practice. However, there are
+                        other branches of yoga such as kriya, raja, and karma yoga that are separate from the
+                        physical-based yoga practice. The
+                        physical-based yoga is the most popular and has numerous styles.</p>
+                </div>
+
+                <button class="accordion">Iyengar yoga</button>
+                <div class="panel">
+                    <p>Iyengar yoga was founded by B.K.S. Iyengar and focuses on alignment as well as detailed and
+                        precise movements. In an
+                        Iyengar class, students perform a variety of postures while controlling the breath.</p>
+                </div>
+
+                <button class="accordion">Kundalini yoga</button>
+                <div class="panel">
+                    <p>Kundalini yoga practice is equal parts spiritual and physical. This style is all about releasing
+                        the kundalini
+                        energy in
+                        your body said to be trapped, or coiled, in the lower spine.</p>
+                </div>
+
+                <button class="accordion">Ashtanga yoga</button>
+                <div class="panel">
+                    <p>In Sanskrit, ashtanga is translated as "Eight Limb path." In Mysore, India, people gather to
+                        practice this form of yoga
+                        together at their own pace—if you see Mysore-led ashtanga, it's expected of you to know the
+                        series. Vinyasa yoga stems
+                        from ashtanga as the flowing style linking breath to movement.</p>
+                </div>
+
+                <button class="accordion">Vinyasa yoga</button>
+                <div class="panel">
+                    <p>Vinyasa means "to place in a special way" and, in this case, yoga postures. Vinyasa is the most
+                        athletic yoga style.
+                        Vinyasa was adapted from ashtanga yoga in the 1980s. Many types of yoga can also be considered
+                        vinyasa flows such as
+                        ashtanga, power yoga, and prana.
+                    </p>
+                </div>
+
+                <button class="accordion">Bikram yoga</button>
+                <div class="panel">
+                    <p>Bikram yoga is named after Bikram Choudhury and features a sequence of set poses in a sauna-like
+                        room—typically set to
+                        105 degrees and 40% humidity. Choudhury faced sexual assault and harassment lawsuits in the U.S.
+                        and fled to Mexico in
+                        2017. Many studios that were formerly Bikram now practice hot yoga, in an effort to disassociate
+                        with the founder.</p>
+                </div>
+
+                <button class="accordion">Yin yoga</button>
+                <div class="panel">
+                    <p>Yin yoga is a slow-paced style of yoga with seated postures that are held for longer periods of
+                        time. Yin can also be a
+                        meditative yoga practice that helps you find inner peace.</p>
+                </div>
+
+                <button class="accordion">Restorative yoga</button>
+                <div class="panel">
+                    <p>Restorative yoga focuses on winding down after a long day and relaxing your mind. At its core,
+                        this style focuses on
+                        body relaxation. Restorative yoga also helps to cleanse and free your mind.</p>
+                </div>
+
+                <button class="accordion">Prenatal yoga</button>
+                <div class="panel">
+                    <p>Prenatal yoga is carefully adapted for "moms to be" and is tailored to women in all trimesters.
+                        Many have said that
+                        prenatal is one of the best types of exercise for expectant moms because of the pelvic floor
+                        work, focus on breathing,
+                        and bonding with the growing baby; prenatal yoga also helps mothers prepare for labor and
+                        delivery. I also practiced my
+                        own form of prenatal yoga during both of my pregnancies.</p>
+                </div>
+
+                <button class="accordion">Anusara yoga</button>
+                <div class="panel">
+                    <p>Anusara is a modern-day version of hatha yoga, most similar to vinyasa in that it focuses on
+                        alignment, but with
+                        more
+                        focus on the mind-body-heart connection. It was founded by John Friend who created a unique
+                        system called the
+                        Universal
+                        Principals of Alignment. He resigned in 2012 after accusations of sexual misconduct and
+                        financial mismanagement.
+                        Friend
+                        has since partnered with Desi and Micah Springer to teach the Bowspring method.</p>
+                </div>
+
+                <button class="accordion">Jivamukti yoga</button>
+                <div class="panel">
+                    <p>Jivamukti was founded in 1984 by Sharon Ganon and David Life. Jivamukti is mainly
+                        vinyasa-flow-style classes infused
+                        with Hindu spiritual teachings. At its core, this style emphasizes connection to Earth as a
+                        living being, so most
+                        Jivamukti devotees follow their vegetarian philosophy.</p>
+                </div>
+            </article>
+            <aside>
+                <h2>Never miss out on our sessions! Subscribe to our newsletter!</h2>
+                <form name="order" action="http://szamtud.uni-corvinus.hu/~blang/receive.php" id="myform" method="post">
+                    <p><label for="name">Name </label><br>
+                        <input class="textbox" type="text" id="name" name="name">
+                    </p>
+
+                    <p><label for="email">E-mail </label> <br>
+                        <input class="textbox" type="email" id="email" name="email">
+                    </p>
+
+                    <p>
+                        <input type="submit" class="button" value="Submit">
+                    </p>
+                </form>
+            </aside>
+        </div>
+        <div class="col-6 col-t-12">
+            <article>
+                <h2>Customer Reviews:</h2>
+                <div class="row">
+                    <figure class="col-6 col-t-12 instructors">
+                        <img src="images/customer1.jpeg" alt="customer 1">
+                    </figure>
+                    <div class="col-6 col-t-12 instructorcaption">
+                        <h2>Yeo Lee</h2>
+                        <p>
+                            The space is incredible – the exposed brick walls, the funky decor, the vintage aesthetic,
+                            the beautiful hardwood floors
+                            and high ceilings… it’s magical.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <figure class="col-6 col-t-12 instructors">
+                        <img src="images/customer2.jpeg" alt="customer 2">
+                    </figure>
+                    <div class="col-6 col-t-12 instructorcaption">
+                        <h2>Tanner Smith</h2>
+                        <p>
+                            The teachers – these people are hands down some of the best I’ve practiced with. They’re
+                            dedicated
+                            to the practice and they genuinely care about the yoga community.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <figure class="col-6 col-t-12 instructors">
+                        <img src="images/customer3.jpeg" alt="customer 3">
+                    </figure>
+                    <div class="col-6 col-t-12 instructorcaption">
+                        <h2>Linda Hall</h2>
+                        <p>
+                            The class schedule is very eclectic, there’s a class for everyone – literally.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+    <div class="row">
+        <footer class="col-12 col-t-12">
+            Planet B Yoga Studio, De Quincy Mews 4 York house London E1061SU United Kingdom<br>
+            This website is for educational purposes only
+        </footer>
+    </div>
+
+    <!--forrás: https://www.w3schools.com/howto/howto_js_accordion.asp-->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("activeAccordion");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

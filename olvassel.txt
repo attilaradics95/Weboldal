@@ -1,0 +1,17 @@
+Oldal készítőjének neve: Radics Attila
+
+Leírás: Ez egy kitalált londoni yoga studio weboldala. Az oldalon lehetőség van a szolgáltatásaikről olvasni, kapcsolatba lépni a hellyel és jelezni az igényét a helykibérlésére. ( Az oldalon szereplő képek más yoga studio-k oldaláról vannak. )
+
+Az általam írt js kód a javascript.js fájlban található, de a venurehire.html és a classes.html oldalakon használom. Kiszámolja a stúdióbérlés költségét. Az index.html fájlban az "accordion" gombhoz szükséges js kódot nem én írtam. A kód forrása: https://www.w3schools.com/howto/howto_js_accordion.asp 
+A venuehire.html-ben a valueNotEquals metódus forrása: https://stackoverflow.com/questions/4364291/jquery-validate-select-box
+Accordion gombok forrása: https://www.w3schools.com/howto/howto_js_accordion.asp
+index.html 
+
+Egyedi fonttípusok: Drugs, ralewayRegular, raleway-Bold, DINCondensedBold
+HTML5 form elemek: venuehire.html: range, date
+***SZÖVEGEK FORRÁSA***
+About us szöveg forrása: http://theyogaplaceohio.com/about-us
+Instructors szöveg forrása: https://samadhiyoga.net/about/meet-our-teachers/
+valueNotEquals metódus forrása: https://stackoverflow.com/questions/4364291/jquery-validate-select-box
+index.html szöveg forrása: https://www.mindbodygreen.com/articles/the-11-major-types-of-yoga-explained-simply
+"Customer reviews" rész szöveg forrása: https://www.thejourneyjunkie.com/yoga-3/the-truth-behind-owning-a-yoga-studio/

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radics Attila">
+    <meta name="description" content="Planet B Yoga Studio">
+    <title>Planet B</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="kepek/favicon_inverted.png" rel="icon" type="image/x-icon">
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-validation-1/dist/jquery.validate.js"></script>
+    <style>
+        label.error {
+            color: darkred;
+        }
+    </style>
+    <script>
+        //valueNotEquals metódus forrása: https://stackoverflow.com/questions/4364291/jquery-validate-select-box
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg != value;
+        }, "Value must not equal arg.");
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    studio: { valueNotEquals: "-1" },
+                    date: { valueNotEquals: "" },
+                },
+                messages: {
+                    firstname: " Please provide your first name!",
+                    lastname: " Please provide your last name!",
+                    email: " Please provide a valid e-mail address!",
+                    studio: { valueNotEquals: "Please select an item!" },
+                    date: { valueNotEquals: " Please pick a date" }
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <header class="col-12 col-t-12">
+            <nav class="col-12 col-t-12">
+                <ul>
+                    <li class="col-2 col-t-12"><a href="about.html">ABOUT US</a></li>
+                    <li class="col-2 col-t-12"><a href="classes.html">CLASSES</a></li>
+                    <li class="col-4 col-t-12"><a href="index.html" id="title"><img src="images/favicon.png"
+                                class="favicon" alt="favorite icon"></a>
+                    </li>
+                    <li class="col-2 col-t-12"><a href="#" class="active">CONTACT US</a></li>
+                    <li class="col-2 col-t-12"><a href="venuehire.html">VENUE HIRE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="row">
+        <div class="col-6 col-t-6">
+            <form name="order" action="http://szamtud.uni-corvinus.hu/~blang/receive.php" id="myform" method="post"
+                onsubmit="return ellenoriz()">
+                <article>
+
+                    <p><label for="firstname">First name </label> <br>
+                        <input class="textbox" type="text" id="firstname" name="firstname">
+                    </p>
+
+                    <p><label for="lastname">Last name </label> <br>
+                        <input class="textbox" type="text" id="lastname" name="lastname">
+                    </p>
+
+                    <p><label for="email">E-mail </label> <br>
+                        <input class="textbox" type="email" id="email" name="email">
+                    </p>
+
+                    <p>
+                        <label for="message">Message </label> <br>
+                        <textarea name="message" cols="40" id="message" rows="5"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Submit">
+                    </p>
+                </article>
+            </form>
+        </div>
+        <article class="contact">
+            <div class="col-6 col-t-6">
+                <h3>PHONE</h3>
+                <p>+4401234567</p><br>
+
+                <h3>E-MAIL</h3>
+                <p>sample@yogaspace.com</p><br>
+
+                <h3>HOURS</h3>
+                <p>MON 6 AM - 9 PM</p>
+                <p>TUE 6 AM - 9 PM</p>
+                <p>WED 6 AM - 9 PM</p>
+                <p>THU 6 AM - 9 PM</p>
+                <p>FRI 6 AM - 9 PM</p>
+                <p>SAT 9 AM - 9 PM</p><br>
+
+                <h3>LOCATION</h3>
+                <p>De Quincy Mews 4 York house London E1061SU United Kingdom</p><br>
+                <img src="images/location.png" alt="location">
+            </div>
+        </article>
+    </div>
+
+
+    <div class="row">
+        <footer>
+            Planet B Yoga Studio, De Quincy Mews 4 York house London E1061SU United Kingdom<br>
+            This website is for educational purposes only
+
+        </footer>
+    </div>
+</body>
+
+</html>

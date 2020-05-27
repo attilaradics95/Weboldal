@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Radics Attila">
+    <meta name="description" content="Planet B Yoga Studio">
+    <title>Planet B</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="kepek/favicon_inverted.png" rel="icon" type="image/x-icon">
+    <script src="javascript.js"></script>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-validation-1/dist/jquery.validate.js"></script>
+    <script>
+        //valueNotEquals metódus forrása: https://stackoverflow.com/questions/4364291/jquery-validate-select-box
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg != value;
+        }, "Value must not equal arg.");
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    session: { valueNotEquals: "Please click on the schedule!" },
+
+                },
+                messages: {
+                    name: " Please provide your name!",
+                    email: " Please provide a valid e-mail address!",
+                    session: { valueNotEquals: "Please choose a session!" },
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <header class="col-12 col-t-12">
+            <nav class="col-12 col-t-12">
+                <ul>
+                    <li class="col-2 col-t-12"><a href="about.html">ABOUT US</a></li>
+                    <li class="col-2 col-t-12"><a href="#" class="active">CLASSES</a></li>
+                    <li class="col-4 col-t-12"><a href="index.html" id="title"><img src="images/favicon.png"
+                                class="favicon" alt="favorite icon"></a>
+                    </li>
+                    <li class="col-2 col-t-12"><a href="contact.html">CONTACT US</a></li>
+                    <li class="col-2 col-t-12"><a href="venuehire.html">VENUE HIRE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="row">
+        <div class="col-8 col-t-12">
+            <article>
+                <h2>Schedule</h2>
+                <table id="table">
+                    <!--Fejléc-->
+                    <tr>
+                        <td class="fejléc">TIME SLOT</td>
+                        <td class="fejléc">MONDAY</td>
+                        <td class="fejléc">TUESDAY</td>
+                        <td class="fejléc">WEDNESDAY</td>
+                        <td class="fejléc">THURSDAY</td>
+                        <td class="fejléc">FRIDAY</td>
+                    </tr>
+                    <!--1. idősáv-->
+                    <tr>
+                        <td>6:45 am - 7:30 am</td>
+                        <td><input type="button" class="tableButton" value="Hatha yoga"
+                                onclick="cellClick('Hatha yoga, Monday, 6:45 - 7:30')"></td>
+                        <td><input type="button" class="tableButton" value="Bikram yoga"
+                                onclick="cellClick('Bikram yoga, Tuesday, 6:45 - 7:30')"></td>
+                        <td><input type="button" class="tableButton" value="Yin yoga"
+                                onclick="cellClick('Yin yoga, Wednesday, 6:45 - 7:30')"></td>
+                        <td><input type="button" class="tableButton" value="Restorative yoga"
+                                onclick="cellClick('Restorative yoga, Thursday, 6:45 - 7:30')"></td>
+                        <td><input type="button" class="tableButton" value="Prenatal yoga"
+                                onclick="cellClick('Prenatal yoga, Tuesday, 6:45 - 7:30')"></td>
+
+                    </tr>
+                    <!--2. idősáv-->
+                    <tr>
+
+                        <td>7:30 am - 8:30 am</td>
+                        <td><input type="button" class="tableButton" value="Iyengar yoga"
+                                onclick="cellClick('Iyengar yoga, Monday, 7:30 - 8:30')"></td>
+                        <td><input type="button" class="tableButton" value="Anusara yoga"
+                                onclick="cellClick('Anusara yoga, Tuesday, 7:30 - 8:30')"></td>
+                        <td><input type="button" class="tableButton" value="Jivamukti yoga"
+                                onclick="cellClick('Jivamukti yoga, Wednesday, 7:30 - 8:30')"></td>
+                        <td><input type="button" class="tableButton" value="Hatha yoga"
+                                onclick="cellClick('Iyengar yoga, Thursday, 7:30 - 8:30')"></td>
+                        <td><input type="button" class="tableButton" value="Sivananda yoga"
+                                onclick="cellClick('Sivananda yoga, Friday, 7:30 - 8:30')"></td>
+                    </tr>
+                    <!--3. idősáv-->
+                    <tr>
+                        <td>10 am - 11:15 am</td>
+                        <td><input type="button" class="tableButton" value="Kundalini yoga"
+                                onclick="cellClick('Kundalini yoga, Monday, 10:00 - 11:15')"></td>
+                        <td><input type="button" class="tableButton" value="Hatha yoga"
+                                onclick="cellClick('Hatha yoga, Tuesday, 10:00 - 11:15')"></td>
+                        <td><input type="button" class="tableButton" value="Hatha yoga"
+                                onclick="cellClick('Hatha yoga, Wednesday, 10:00 - 11:15')"></td>
+                        <td><input type="button" class="tableButton" value="Hatha yoga"
+                                onclick="cellClick('Hatha yoga, Thursday, 10:00 - 11:15')"></td>
+                        <td><input type="button" class="tableButton" value="Yin yoga"
+                                onclick="cellClick('Yin yoga, Friday, 10:00 - 11:15')"></td>
+                    </tr>
+                    <!--4. idősáv-->
+                    <tr>
+                        <td>6 pm - 7:30 pm</td>
+                        <td><input type="button" class="tableButton" value="Ashtanga yoga"
+                                onclick="cellClick('Ashtanga yoga, Monday, 18:00 - 19:30')">
+                        </td>
+                        <td><input type="button" class="tableButton" value="Vinyasa yoga"
+                                onclick="cellClick('Vinyasa yoga, Tuesday, 18:00 - 19:30')">
+                        </td>
+                        <td><input type="button" class="tableButton" value="Sivinanda yoga"
+                                onclick="cellClick('Sivananda yoga, Wednesday, 18:00 - 19:30')">
+                        </td>
+                        <td><input type="button" class="tableButton" value="Yin yoga"
+                                onclick="cellClick('Yin yoga, Thursday, 18:00 - 19:30')"></td>
+                        <td><input type="button" class="tableButton" value="Prenatal yoga"
+                                onclick="cellClick('Prenatal yoga, Friday, 18:00 - 19:30')">
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </div>
+
+
+
+        <form name="order" action="http://szamtud.uni-corvinus.hu/~blang/receive.php" id="myform" method="post">
+            <div class="col-4 col-t-12">
+                <article>
+                    <h2>Book a session</h2>
+
+                    <p><label for="session">Your selection is: </label>
+                        <input class="textbox" type="text" id="session" name="session" size="27"
+                            value="Please click on the schedule!" readonly="readonly">
+                    </p>
+
+                    <p><label for="name">Name </label> <br>
+                        <input class="textbox" type="text" id="name" name="name" size="50">
+                    </p>
+
+                    <p><label for="email">E-mail </label> <br>
+                        <input class="textbox" type="email" id="email" name="email" size="50">
+                    </p>
+
+
+                    <p><label for="instructor">Your instructor is: </label>
+                        <input class="textbox" type="text" id="instructor" name="instructor" size="25"
+                            value="Please click on the schedule!" disabled>
+                    </p>
+                    <div class="col-6 col-t-12">
+                        <img src="images/unknown_trainer.png" id="instructorImage" class="instructors" alt="unknown">
+
+                    </div>
+                    <div class="col-6 col-t-12">
+                        <input type="submit" class="button" value="BOOK NOW">
+                    </div>
+
+
+                </article>
+            </div>
+        </form>
+
+    </div>
+    <div class="row">
+        <footer class="col-12 col-t-12">
+            <div>Planet B Yoga Studio, De Quincy Mews 4 York house London E1061SU United Kingdom<br>
+                This website is for educational purposes only</div>
+        </footer>
+    </div>
+</body>
+
+</html>
